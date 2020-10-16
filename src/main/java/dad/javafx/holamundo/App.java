@@ -1,23 +1,25 @@
 package dad.javafx.holamundo;
 
-import dad.javafx.holamundo.mvc.Vista;
+import dad.javafx.holamundo.mvc.Controlador;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
 	
-	private Vista view = new Vista();
+	private Controlador controller = new Controlador();
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		Scene escena = new Scene(view, 320, 200);
+		controller = new Controlador();
 		
-		primaryStage.setScene(escena);
-		primaryStage.setTitle("Hola Mundo Mejorado");
-		primaryStage.show();
-	
+		Scene escena = new Scene(controller.getView(), 320, 200);
+		
+		Stage stage = new Stage();
+		stage.setTitle("Hola Mundo Mejorado");
+		stage.setScene(escena);
+		stage.show();
 	}
 	
 	public static void main(String[] args) {
