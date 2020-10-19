@@ -8,7 +8,7 @@ public class Controlador {
 	private Modelo model = new Modelo();
 	
 	public Controlador() {
-		model.mensajeProperty().set("Aquí saldrá el saludo");
+		model.setMensaje("AquÃ­ saldrÃ¡ el saludo");
 		
 		model.saludoProperty().bind(view.getTfSaludo().textProperty());
 		view.getLbMensaje().textProperty().bind(model.mensajeProperty());
@@ -18,10 +18,10 @@ public class Controlador {
 	
 	private void onSaludarAction(ActionEvent e) {
 		if (model.saludoProperty().getValue().equals("")) {
-			model.mensajeProperty().setValue("Aquí saldrá el saludo");
+			model.setMensaje("AquÃ­ saldrÃ¡ el saludo");
 			view.getLbMensaje().setStyle("");
 		} else {
-			model.mensajeProperty().setValue("¡Hola " + model.saludoProperty().getValue() + "!");
+			model.setMensaje("Â¡Hola " + model.getSaludo() + "!");
 			view.getLbMensaje().setStyle("-fx-text-fill: blue; -fx-font: italic bold 30 sans-serif;");
 		}
 	}
